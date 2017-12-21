@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace GameNew
 {
+    //Can probably create a 'Button' class and just override the image file, size and position for each individual button
     class GameButtons
     {
     }
