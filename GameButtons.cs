@@ -28,11 +28,7 @@ namespace GameNew
         public InstructionButton(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12);
         }
 
         bool down;
@@ -56,9 +52,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -72,14 +65,11 @@ namespace GameNew
         }
     }
 
-
-
     class LeaderboardButton
     {
         Texture2D texture;
         Vector2 position;
         Rectangle rectangle;
-
 
         Color colour = new Color(255, 255, 255, 255);
 
@@ -88,11 +78,7 @@ namespace GameNew
         public LeaderboardButton(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12); 
         }
 
         bool down;
@@ -116,9 +102,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -131,8 +114,6 @@ namespace GameNew
             spriteBatch.Draw(texture, rectangle, colour);
         }
     }
-
-
 
     class Level1Button
     {
@@ -147,11 +128,7 @@ namespace GameNew
         public Level1Button(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12); 
         }
 
         bool down;
@@ -175,9 +152,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -190,8 +164,6 @@ namespace GameNew
             spriteBatch.Draw(texture, rectangle, colour);
         }
     }
-
-
 
     class Level2Button
     {
@@ -205,12 +177,8 @@ namespace GameNew
 
         public Level2Button(Texture2D newTexture, GraphicsDevice graphics)
         {
-            texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            texture = newTexture;       
+            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12); 
         }
 
         bool down;
@@ -234,9 +202,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -249,9 +214,7 @@ namespace GameNew
             spriteBatch.Draw(texture, rectangle, colour);
         }
     }
-
-
-
+    
     class Level3Button
     {
         Texture2D texture;
@@ -265,11 +228,7 @@ namespace GameNew
         public Level3Button(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);
         }
 
         bool down;
@@ -293,9 +252,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -308,7 +264,6 @@ namespace GameNew
             spriteBatch.Draw(texture, rectangle, colour);
         }
     }
-
 
     class LevelSelectButton
     {
@@ -323,11 +278,7 @@ namespace GameNew
         public LevelSelectButton(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12); 
         }
 
         bool down;
@@ -351,9 +302,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -380,11 +328,7 @@ namespace GameNew
         public MainMenuButton(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 4, graphics.Viewport.Height / 12); 
         }
 
         bool down;
@@ -408,9 +352,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -438,11 +379,7 @@ namespace GameNew
         public PlayButton(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12); 
         }
 
         bool down;
@@ -466,9 +403,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
@@ -481,7 +415,6 @@ namespace GameNew
             spriteBatch.Draw(texture, rectangle, colour);
         }
     }
-
 
     class QuitButton
     {
@@ -496,11 +429,7 @@ namespace GameNew
         public QuitButton(Texture2D newTexture, GraphicsDevice graphics)
         {
             texture = newTexture;
-
-            //ScreenWidth = 800, ScreenHeight = 600
-            //ImgW = 100(width of image, imgH = 20(height of image)
-            //size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 30);  
-            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);  //will have to be different for the leaderboard button as its dimensions are different (maybe create new class for it
+            size = new Vector2(graphics.Viewport.Width / 8, graphics.Viewport.Height / 12);  
         }
 
         bool down;
@@ -524,9 +453,6 @@ namespace GameNew
                 colour.A += 3;
                 isClicked = false;
             }
-
-
-
         }
 
         public void SetPosition(Vector2 newPosition)
