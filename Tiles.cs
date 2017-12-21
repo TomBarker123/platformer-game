@@ -31,8 +31,6 @@ namespace GameNew
         {
             spriteBatch.Draw(texture, rectangle, Color.White);
         }
-
-
     }
 
     class CollisionTiles : Tiles
