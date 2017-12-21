@@ -7,16 +7,13 @@ using System;
 
 namespace GameNew
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
     public class Game1 : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont textFont;       
 
-        //enum for the game state
+        //Enum for the game state
         enum GameState
         {
             MainMenu,         
@@ -38,16 +35,16 @@ namespace GameNew
         LeaderboardButton btnLeaderboard;
         MainMenuButton btnMainMenu;
         InstructionButton btnInstructions;        
-        Level1Button btnLevel1;   //instantiating menu buttons
+        Level1Button btnLevel1;   //Instantiating menu buttons
         Level2Button btnLevel2;
         Level3Button btnLevel3;
 
         DateTime startTime;
-        DateTime endTime;   //timer and timespan - used to time how long it takes for the user to reach the end of each level
+        DateTime endTime;   //Timer and timespan - used to time how long it takes for the user to reach the end of each level
         TimeSpan levelTime;     
         
         Map map;
-        Map map2;       //instantiating the level maps, user character and a camera
+        Map map2;       //Instantiating the maps for each level, user character and a camera
         Map map3;
         Player player;
         Camera camera;
@@ -60,8 +57,6 @@ namespace GameNew
         SoundEffect deathSound;
         SoundEffect endSound;
         Song song;
-
-        //fastest time shown at level complete screen - read form database
                
         public Game1()
         {
@@ -71,16 +66,8 @@ namespace GameNew
             Window.Title = "PLATFORM GAME";
         }           
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             map = new Map();
             map2 = new Map();  //Creating an instance of the map and user character
             map3 = new Map();
@@ -89,20 +76,16 @@ namespace GameNew
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
+            // Creating a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             //Screen adjustments
             graphics.PreferredBackBufferWidth = screenWidth;
-            graphics.PreferredBackBufferHeight = screenHeight;  //this is to set the max width and height of the screen
+            graphics.PreferredBackBufferHeight = screenHeight;  //This is to set the max width and height of the screen
             graphics.ApplyChanges();
-            IsMouseVisible = true;  //mouse is set to visible when the program starts
+            IsMouseVisible = true;  //Mouse is set to visible when the program starts
 
             //Menu buttons                  
             btnLeaderboard = new LeaderboardButton(Content.Load<Texture2D>("btnLeaderboard"), graphics.GraphicsDevice);
@@ -114,9 +97,9 @@ namespace GameNew
             btnLevel3 = new Level3Button(Content.Load<Texture2D>("btnLevel3"), graphics.GraphicsDevice);  
             
             Tiles.Content = Content;
-            camera = new Camera(GraphicsDevice.Viewport); //camera is set to match the screen width and height set earlier
+            camera = new Camera(GraphicsDevice.Viewport); //Camera is set to match the screen width and height set earlier
 
-            //For maps: 0 - no tile drawn, 1 - tile1.png drawn, 2 - tile2.png draw etc
+            //0 - no tile drawn, 1 - tile1.png drawn, 2 - tile2.png draw etc
             map.Generate(new int[,]
             {
                 {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1 }, 
@@ -124,8 +107,8 @@ namespace GameNew
                 {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2 },  
                 {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2 },
                 {2,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2 },
-                {2,0,0,0,0,0,0,1,1,2,2,2,2,1,0,0,0,0,0,0,1,2,2,1,2,2,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2 },   //this could be done using streamreader to read in a text file
-                {2,0,0,0,0,0,1,2,2,2,2,2,2,2,1,1,0,0,0,0,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,2 },   //could use run length encoding so it takes up less space
+                {2,0,0,0,0,0,0,1,1,2,2,2,2,1,0,0,0,0,0,0,1,2,2,1,2,2,2,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2 },   //This could be done using streamreader to read in a text file
+                {2,0,0,0,0,0,1,2,2,2,2,2,2,2,1,1,0,0,0,0,2,2,2,2,2,2,2,2,2,0,0,0,0,0,0,0,0,0,1,0,1,1,1,0,0,0,0,0,0,2 },   //This could use run length encoding so it takes up less space
                 {2,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,1,0,0,0,2,2,2,2,2,2,2,2,0,0,0,0,1,1,1,1,1,1,2,0,2,2,2,1,1,1,1,1,1,2 },
                 {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,0,0,3,2,2,2,2,2,2,0,0,0,0,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2 },
                 {2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,0,0,3,3,3,3,3,3,3,3,0,0,2,2,2,2,2,2,3,3,3,0,3,3,3,3,3,3,3,3,3,3 },
@@ -197,21 +180,11 @@ namespace GameNew
             level3Background = Content.Load<Texture2D>("level3Background");
         }             
 
-                          
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// game-specific content.
-        /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+           
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -234,7 +207,7 @@ namespace GameNew
                 CurrentGameState = GameState.MainMenu;
             
             if (btnInstructions.isClicked == true)                         
-                CurrentGameState = GameState.Instructions;          //A set of IF statements to change the game state once the button is clicked
+                CurrentGameState = GameState.Instructions;          //A set of 'if' statements to change the game state once the button is clicked
                        
             if (btnLevel1.isClicked == true)
             {
@@ -289,7 +262,7 @@ namespace GameNew
                     {
                         endSound.Play();
                         endTime = DateTime.Now;
-                        CurrentGameState = GameState.LevelComplete;  //if the player reaches an X coordinate of 3720, then the game h
+                        CurrentGameState = GameState.LevelComplete;  //If the player reaches an X coordinate of 3720, then the game ends
                         player.Reset();
                     }
 
@@ -353,14 +326,7 @@ namespace GameNew
             }          
             base.Update(gameTime);
         }
-
-
-
-
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
+        
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
@@ -444,11 +410,7 @@ namespace GameNew
                     spriteBatch.Draw(level3Background, new Vector2(3000, 0), Color.White);                  
                     spriteBatch.Draw(level3Background, new Vector2(0, 1100), Color.White);
                     spriteBatch.Draw(level3Background, new Vector2(3000, 1100), Color.White);
-                    spriteBatch.Draw(level3Background, new Vector2(3200, 1100), Color.White);
-               
-
-
-
+                    spriteBatch.Draw(level3Background, new Vector2(3200, 1100), Color.White);       
                     map3.Draw(spriteBatch);
                     player.Draw(spriteBatch);
                     spriteBatch.End();
