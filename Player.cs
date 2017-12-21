@@ -40,8 +40,6 @@ namespace GameNew
             position += velocity;
             rectangle = new Rectangle((int)position.X, (int)position.Y, texture.Width, texture.Height);
 
-            //Input(gameTime);
-
             if (velocity.Y < 10)
             {
                 velocity.Y += 0.4f;
@@ -67,37 +65,13 @@ namespace GameNew
                 hasJumped = true;
                 effect.Play();
             }
-        }
-                        
+        }                        
         
         public void Reset()
         {
             position.X = 0;
             position.Y = 0;
         }
-        //private void Input(GameTime gameTime) //SoundEffect effect)
-        //{
-          //  if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            //{
-              //  velocity.X = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
-            //}
-            //else if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            //{
-              //  velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
-            //}
-            //else
-            //{
-              //  velocity.X = 0f;
-            //}
-
-            //if (Keyboard.GetState().IsKeyDown(Keys.Space) && hasJumped == false)
-            //{
-              //  position.Y -= 10f;
-                //velocity.Y = -7f;
-                //hasJumped = true;
-                //effect.Play();
-           // }
-        //}
 
         public void Collision(Rectangle newRectangle, int xOffset, int yOffset)
         {
@@ -110,12 +84,12 @@ namespace GameNew
 
             if (rectangle.TouchLeftOf(newRectangle))
             {
-                position.X = newRectangle.X - rectangle.Width - 2;                //doesnt have to be  '2' depends on the size of the sprites, change number if you have issues
+                position.X = newRectangle.X - rectangle.Width - 2;                
             }
 
             if (rectangle.TouchRightOf(newRectangle))
             {
-                position.X = newRectangle.X + newRectangle.Width + 2;             //doesnt have to be  '2' depends on the size of the sprites, change number if you have issues
+                position.X = newRectangle.X + newRectangle.Width + 2;             
             }
 
             if (rectangle.TouchBottomOf(newRectangle))
@@ -147,11 +121,7 @@ namespace GameNew
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, rectangle, Color.White);
-        }
-               
-                    
-        
-            
+        }                     
     }
 }
                             
