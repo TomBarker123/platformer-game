@@ -35,7 +35,7 @@ namespace GameNew
         LeaderboardButton btnLeaderboard;
         MainMenuButton btnMainMenu;
         InstructionButton btnInstructions;        
-        Level1Button btnLevel1;   //Instantiating menu buttons
+        Level1Button btnLevel1;   
         Level2Button btnLevel2;
         Level3Button btnLevel3;
 
@@ -44,7 +44,7 @@ namespace GameNew
         TimeSpan levelTime;     
         
         Map map;
-        Map map2;       //Instantiating the maps for each level, user character and a camera
+        Map map2;      
         Map map3;
         Player player;
         Camera camera;
@@ -69,7 +69,7 @@ namespace GameNew
         protected override void Initialize()
         {
             map = new Map();
-            map2 = new Map();  //Creating an instance of the map and user character
+            map2 = new Map();  
             map3 = new Map();
             player = new Player();
 
@@ -117,7 +117,7 @@ namespace GameNew
                 {4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,3,3,3,3,3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4 },
                 {4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,4,4,4,4,4,4,4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,4 },
                 {4,4,4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4,0,0,0,0,0,0,4,0,0,0,0,0,0,0,4,4,4,4,4,4,4,4,4 },
-                {4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,4,4,4,4,4,4,4 },//Map for level 1 loaded
+                {4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,4,4,4,4,4,4,4 },
                 {4,4,4,4,4,4,0,0,0,0,0,0,0,0,0,0,4,4,4,4,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,4,0,0,0,0,0,4,4,4,4,4,4,4 },
                 {5,5,5,5,5,5,5,0,0,0,5,0,5,0,5,0,4,4,4,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,4,0,0,4,4,4,4,4,4,4,4 },
                 {5,5,5,5,5,5,5,0,0,0,5,5,5,5,5,5,5,5,0,0,0,0,0,0,0,5,0,5,0,5,0,5,0,0,0,0,0,0,0,0,0,5,5,5,5,5,5,5,5,5 },
@@ -136,7 +136,7 @@ namespace GameNew
                 {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2 },
                 {2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,1,0,0,0,0,0,0,1,1,1,1,2,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,2 },
                 {2,2,1,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,1,0,0,0,0,1,2,2,2,2,2,0,0,0,0,0,0,0,0,1,2,2,1,0,0,0,0,0,2 },
-                {2,2,2,1,1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,1,0,0,1,2,2,2,2,2,2,1,0,0,0,0,0,0,1,2,2,2,2,1,0,0,0,0,2 },//Map for level 2 loaded
+                {2,2,2,1,1,0,0,0,0,0,0,0,0,1,2,2,2,2,2,2,2,2,1,0,0,1,2,2,2,2,2,2,1,0,0,0,0,0,0,1,2,2,2,2,1,0,0,0,0,2 },
                 {2,2,2,2,2,1,1,1,0,1,1,1,1,2,2,2,2,2,2,2,2,2,2,1,1,2,2,2,2,2,2,2,2,1,0,1,1,1,1,2,2,2,2,2,2,1,0,0,0,2 },   
                 {2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,1,1,1,2 },   
                 {2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,0,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2 },
@@ -173,7 +173,7 @@ namespace GameNew
             song = Content.Load<Song>("Song");
             deathSound = Content.Load<SoundEffect>("deathSound");
             endSound = Content.Load<SoundEffect>("endSound");
-            textFont = Content.Load<SpriteFont>("TextFont");        //Loading the player, sound effects and images
+            textFont = Content.Load<SpriteFont>("TextFont");       
             menuImage = Content.Load<Texture2D>("MenuImage");                   
             level1Background = Content.Load<Texture2D>("level1Background");
             level2Background = Content.Load<Texture2D>("level2Background");
@@ -207,7 +207,7 @@ namespace GameNew
                 CurrentGameState = GameState.MainMenu;
             
             if (btnInstructions.isClicked == true)                         
-                CurrentGameState = GameState.Instructions;          //A set of 'if' statements to change the game state once the button is clicked
+                CurrentGameState = GameState.Instructions;        
                        
             if (btnLevel1.isClicked == true)
             {
@@ -242,7 +242,7 @@ namespace GameNew
                 case GameState.LevelComplete:
                     IsMouseVisible = true;
                     MediaPlayer.Stop();                    
-                    break;                         //Switch statement for updating each game state
+                    break;                      
 
                 case GameState.GameOver:
                     IsMouseVisible = true;
@@ -262,7 +262,7 @@ namespace GameNew
                     {
                         endSound.Play();
                         endTime = DateTime.Now;
-                        CurrentGameState = GameState.LevelComplete;  //If the player reaches an X coordinate of 3720, then the game ends
+                        CurrentGameState = GameState.LevelComplete; 
                         player.Reset();
                     }
 
